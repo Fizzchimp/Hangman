@@ -26,4 +26,7 @@ class Window:
 
 
     def setUpScreen(self, string):
-        leftFrame = Frame
+        leftFrame = Frame(self.screen, width = 300, height = 800, bg = "grey")
+        leftFrame.grid(row = 0, column = 0, padx = 10, pady = 5)
+        rightFrame = Frame(self.screen, width = 700, height = 800, bg = "grey")
+        rightFrame.grid(row = 0, column = 1, padx = 10, pady = 5, sticky = "NSEW")
