@@ -13,3 +13,4 @@ class World:
 
 world = World()
 world.runWorld()
+yay
