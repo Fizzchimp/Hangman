@@ -3,6 +3,7 @@ import time
 
 WIDTH = 1200
 HEIGHT = 800
+
 class World:
     def __init__(self):
         self.window = Window(WIDTH, HEIGHT)
@@ -13,4 +14,3 @@ class World:
 
 world = World()
 world.runWorld()
-yay
