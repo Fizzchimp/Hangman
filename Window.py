@@ -18,7 +18,7 @@ class Window:
         self.wordLabel = None
 
         self.currentImage = 0
-        self.guess = 0
+        self.guess = None
         
         self.loadImages()
     
@@ -32,7 +32,7 @@ class Window:
         rightFrame = Frame(self.screen, width = 700, height = 800, bg = "grey")
         rightFrame.grid(row = 0, column = 1, padx = 10, pady = 5, sticky = "NSEW")
         
-        self.imageLabel = Label(leftFrame, image = self.imageArray[7])
+        self.imageLabel = Label(leftFrame, image = self.imageArray[self.currentImage])
         self.imageLabel.grid(row = 0, column = 0, padx = 5, pady = 5)
         
         Label(rightFrame, text = "Welcome to hangman").grid(row = 1, column = 0, padx = 5, pady = 100, sticky = "NSEW", columnspan = 11)
@@ -49,5 +49,5 @@ class Window:
             
 
     def ButtonAction(self, string):
-        print(string)
+        self.guess = string
         
