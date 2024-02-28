@@ -1,5 +1,5 @@
 from tkinter import *
-
+from tkinter import messagebox
 class Window:
     def __init__(self, width, height):
 
@@ -23,7 +23,7 @@ class Window:
         self.loadImages()
     
     def loadImages(self):
-        self.imageArray = [PhotoImage(file = f"images/hang{i}.png") for i in range(11)]
+        self.imageArray = [PhotoImage(file = f"images/hang{i}.png") for i in range(12)]
 
 
     def setUpScreen(self, string):
@@ -51,3 +51,20 @@ class Window:
     def ButtonAction(self, string):
         self.guess = string
         
+    def updateHiddenWord(self, string):
+        self.wordLabel.config(text = string)
+    
+    def nextImage(self):
+        if self.currentImage < 11:
+            print("Incorrect", self.currentImage)
+            self.currentImage += 1
+            
+            self.imageLabel.config(image = self.imageArray[self.currentImage])
+            
+    def endGame(self):
+        messagebox.showinfo(title = "Opps you lose", message = "Im afraid you have lost")
+        self.screen.destroy()
+
+    def winGame(self):
+        messagebox.showinfo(title = "Yay you win", message = "Congratulations! You have won!")
+        self.screen.destroy()
