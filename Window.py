@@ -18,6 +18,7 @@ class Window:
         self.wordLabel = None
 
         self.currentImage = 0
+        self.guess = 0
         
         self.loadImages()
     
@@ -35,7 +36,7 @@ class Window:
         self.imageLabel.grid(row = 0, column = 0, padx = 5, pady = 5)
         
         Label(rightFrame, text = "Welcome to hangman").grid(row = 1, column = 0, padx = 5, pady = 100, sticky = "NSEW", columnspan = 11)
-        self.wordLabel = Label(rightFrame, text = "_ _ _ _ _ _ _ _ _ _", font = ("Courier", 44))
+        self.wordLabel = Label(rightFrame, text = string, font = ("Courier", 44))
         self.wordLabel.grid(row = 2, column = 0, pady = 5, padx = 100, columnspan = 11)
 
 
